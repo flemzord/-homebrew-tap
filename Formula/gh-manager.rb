@@ -5,20 +5,20 @@
 class GhManager < Formula
   desc ""
   homepage "https://maxence.maireaux.fr"
-  version "0.1.0"
+  version "0.2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/flemzord/gh-manager/releases/download/v0.1.0/gh-manager_darwin-amd64.tar.gz"
-      sha256 "d45818c61edbcb32b7c6b44729e3a6c1c43046d8492fe9622f42840d6e669174"
+    if Hardware::CPU.arm?
+      url "https://github.com/flemzord/gh-manager/releases/download/v0.2.0/gh-manager_darwin-arm64.tar.gz"
+      sha256 "b55c57488ea12778b094c2970d6660ca16a97dbc57922d85f34b6a5286aeefff"
 
       def install
         bin.install "gh-manager"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/flemzord/gh-manager/releases/download/v0.1.0/gh-manager_darwin-arm64.tar.gz"
-      sha256 "1cbadedff8b1631052319c4ab0a3d70ec0da2f45d94eaf601d229500d4159add"
+    if Hardware::CPU.intel?
+      url "https://github.com/flemzord/gh-manager/releases/download/v0.2.0/gh-manager_darwin-amd64.tar.gz"
+      sha256 "06d7d3e0cc5a22613c254f99d2af786bfe26c79e64f08882758ea31e72abeb80"
 
       def install
         bin.install "gh-manager"
@@ -28,16 +28,16 @@ class GhManager < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/flemzord/gh-manager/releases/download/v0.1.0/gh-manager_linux-arm64.tar.gz"
-      sha256 "8564b6d7935a38955acef6d25e1ac97b9dd944c5e954e6d8baf1e56508974548"
+      url "https://github.com/flemzord/gh-manager/releases/download/v0.2.0/gh-manager_linux-arm64.tar.gz"
+      sha256 "f5575743e02c9eac36bbe1e112fe5e5da72f7e39c705a1d11ab7b3ac75970f0e"
 
       def install
         bin.install "gh-manager"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/flemzord/gh-manager/releases/download/v0.1.0/gh-manager_linux-amd64.tar.gz"
-      sha256 "a65acda4d307c9a9f4b2fb9d85bbc723d1001e0399499efd12d4612d7be7a67e"
+      url "https://github.com/flemzord/gh-manager/releases/download/v0.2.0/gh-manager_linux-amd64.tar.gz"
+      sha256 "852c93bba83cbd44b891be079a122aa8c48ba4c0ace1c99f1d6c37b94e1291f5"
 
       def install
         bin.install "gh-manager"
